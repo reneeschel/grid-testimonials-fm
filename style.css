@@ -72,7 +72,7 @@ body {
     font-size: 0.813rem;
     font-weight: var(--fw-regular);
     background-color: var(--clr-grey-bg);
-    padding-block: 73px;
+    padding-block: 83px;
 }
 
 main {
@@ -201,6 +201,9 @@ img {
 
 /* Desktop */
 @media (min-width: 90em) {
+    body {
+      padding-block: 230px;
+    }
 
     main {
       grid-template-columns:65px repeat(4, 258px) 65px;
