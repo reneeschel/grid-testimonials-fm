@@ -1,0 +1,238 @@
+/* root */
+
+:root {
+
+--clr-purple-50: hsl(260, 100%, 95%);
+--clr-purple-300: hsl(264, 82%, 80%);
+--clr-purple-500: hsl(263, 55%, 52%);
+
+--clr-white: hsl(0, 0%, 100%);
+--clr-grey-100: hsl(214, 17%, 92%);
+--clr-grey-200: hsl(0, 0%, 81%);
+--clr-grey-400: hsl(224, 10%, 45%);
+--clr-grey-500: hsl(217, 19%, 35%);
+--clr-dark-blue: hsl(219, 29%, 14%);
+--clr-black: hsl(0, 0%, 7%);
+--clr-grey-bg: hsla(300, 5%, 96%, 1);
+
+--ff-base: "Barlow Semi Condensed", sans-serif;
+
+
+--fw-regular: 500;
+--fw-bold: 600;
+
+}
+
+/* reset */
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+
+
+/* general styles */
+
+body {
+    font-family: var(--ff-base);
+    font-size: 0.813rem;
+    font-weight: var(--fw-regular);
+    background-color: var(--clr-grey-bg);
+    padding-block: 73px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 35px 1fr 35px;
+    row-gap: 32px;
+}
+
+
+article {
+    background-color:blanchedalmond;
+    border-radius: 0.5rem;
+    padding:2rem;
+    display:grid;
+    gap: 1rem;
+    box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+
+}
+
+.intro {
+    display:grid;
+    grid-template-columns: 1.80rem 1fr;
+    gap: 1.0625rem;
+    align-items: center;
+} 
+
+
+img {
+    border-radius: 50%;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.name {
+    font-size: 0.8125rem;
+
+
+}
+
+.credential {
+    font-size: 0.6875rem;
+}
+
+.comment {
+    font-size: 1.25rem;
+    font-weight: var(--fw-bold);
+}
+
+.quote {
+  color: var(--clr-purple-50);
+  font-weight: var(--ff-regular);
+  line-height: 1.4;
+}
+
+#danial-clifford {
+  grid-column: 2 / span 1;
+  background-color: var(--clr-purple-500);
+  color: var(--clr-white);
+} 
+
+#jonathan-walters {
+  grid-column: 2 / span 1;
+  background-color: var(--clr-grey-500);
+  color: var(--clr-white);
+}
+
+#jonathan-walters .quote {
+  color: var(--clr-grey-100);
+}
+
+#jeanette-harmon, #kira-whittle {
+  grid-column: 2 / span 1;
+  background-color: var(--clr-white);
+  color: var(--clr-grey-500);
+}
+
+#jeanette-harmon .quote, #kira-whittle .quote {
+  color: var(--clr-grey-400);
+}
+
+#patrick-abrams {
+  grid-column: 2 / span 1;
+  background-color: var(--clr-dark-blue);
+  color: var(--clr-white);
+}
+
+
+/* Media Quiries */
+
+/* Tablet */
+@media (min-width: 48em) {
+
+    main {
+      grid-template-columns: 1fr clamp(307.50px, 40vw, 350px) clamp(307.50px, 40vw, 350px) 1fr;
+      column-gap: 32px;
+      justify-content: center;
+    }
+     
+
+  #danial-clifford {
+    grid-column: 2 / span 2;
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-position-x: 375px;
+ 
+  } 
+
+  #jonathan-walters {
+    grid-column: 2 / span 1;
+  }
+
+  #jeanette-harmon {
+    grid-column: 3 / span 1;
+  }
+
+  #kira-whittle {
+    grid-column: 2 / span 2;
+  }
+
+  #patrick-abrams {
+    grid-column: 2 / span 2;  
+  }
+}
+
+
+/* Desktop */
+@media (min-width: 90em) {
+
+    main {
+      grid-template-columns:65px repeat(4, 258px) 65px;
+      row-gap: 24px;
+    }
+
+    #danial-clifford {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    background-position-x: 85%;
+ 
+  } 
+
+  #jonathan-walters {
+    grid-column: 4 / span 1;
+    grid-row: 1;
+  }
+
+  #jeanette-harmon {
+    grid-column: 2 / span 1;
+    grid-row: 2;
+
+  }
+
+  #kira-whittle {
+    grid-column: 5 / span 1;
+    grid-row: 1 / span 2;
+  }
+
+  #patrick-abrams {
+    grid-column: 3 / span 2;
+    grid-row: 2;
+    
+  }
+}
